@@ -38,7 +38,6 @@ for U in U_values:
     gap = max(cbm - vbm, 0)
     gaps.append(gap)
 
-# Clean missing
 U_clean = [u for u, g in zip(U_values, gaps) if g is not None]
 gaps_clean = [g for g in gaps if g is not None]
 
