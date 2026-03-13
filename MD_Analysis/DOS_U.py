@@ -27,14 +27,14 @@ for U in U_values:
     # ---- Shift energy relative to Fermi level ----
     energies = dos.energies - vasp.efermi
 
-    # ---- Find Mn sites ----
+    # ---- Find Mn sites ---- #Change Based on the System of Interest
     mn_sites = [site for site in dos.structure if site.species_string == "Mn"]
 
     if len(mn_sites) == 0:
         print(f"No Mn found in structure for U={U}")
         continue
 
-    # Use first Mn site (assuming equivalent)
+    # Use first site 
     mn_d_dos = dos.get_site_spd_dos(mn_sites[0])[OrbitalType.d]
 
     # ---- Spin Handling ----
