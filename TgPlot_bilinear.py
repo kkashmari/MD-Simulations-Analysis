@@ -28,7 +28,8 @@ lin_mod = sm.OLS(tgdens, X).fit()
 pwlf_model = pwlf.PiecewiseLinFit(tgtemp, tgdens)
 
 # Initial guess psi = 416
-breaks = pwlf_model.fit_with_breaks([tgtemp.min(), 416, tgtemp.max()])
+breaks = pwlf_model.fit(2)
+tg_value = breaks[1]
 
 tg_value = breaks[1]
 
@@ -76,7 +77,6 @@ y1 = beta1 * x1 + beta0
 plt.plot(x1, y1, color="black")
 
 x2 = np.linspace(tg_value - 30, 600, 200)
-y2 = 1.381 + (-0.0002156) * x2
 plt.plot(x2, y2, color="black")
 
 # Tg point
