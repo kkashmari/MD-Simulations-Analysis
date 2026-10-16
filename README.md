@@ -12,6 +12,9 @@ I developed this collection of Python workflows to automate molecular-dynamics s
 The repository includes tools for preparing LAMMPS simulation directories, generating customized input files, submitting HPC jobs, extracting simulation results, and calculating material properties from molecular-dynamics trajectories and log files.
 
 My goal is to create reproducible workflows that reduce repetitive setup work and provide consistent analysis across multiple systems, temperatures, deformation directions, degrees of cure, and independent replicates.
+`extract_shear_data.py` uses the `log` module distributed with Pizza.py
+to read LAMMPS log files. Pizza.py must be installed or its directory
+must be included in `PYTHONPATH`.
 
 ## Research areas
 
