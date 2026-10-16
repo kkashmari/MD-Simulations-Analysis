@@ -36,7 +36,7 @@ for sim_dir in Path(".").glob(simulation_folder_pattern):
     if not sim_dir.is_dir():
         continue
 
-    for data_file in sim_dir.glob(Equilibration_lammps_output):
+    for data_file in sim_dir.glob(output_file_pattern):
 
         structure_name = data_file.stem		# Generating new folders
         run_dir = Results_Folder / sim_dir.name / structure_name
