@@ -55,7 +55,7 @@ for sim_dir in Path(".").glob(simulation_folder_pattern):
         shutil.copy(data_file, Input_data)
         shutil.copy(pbs_file, run_dir / pbs_file)
 
-        triclinic_sim_box_template_script = triclinic_sim_box_template_script.replace("$DATAFILE$", data_file.name)
+        rendered_script = triclinic_sim_box_template_script.replace("$DATAFILE$", data_file.name)
         (run_dir / New_lammps_output).write_text(triclinic_sim_box_template_script)
         if submit_jobs:
             subprocess.run(["qsub", pbs_file], cwd=run_dir, check=True)	#Optional
