@@ -8,7 +8,7 @@ Author: Khatereh Kashmari
 
 import os
 import shutil
-from pathlib import Pat
+from pathlib import Path
 import subprocess
 
 # User Inputs
