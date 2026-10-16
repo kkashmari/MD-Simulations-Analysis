@@ -92,11 +92,11 @@ def main():
 
     data = np.column_stack(extracted_columns)
 
+    output_stem = input_file.name.removesuffix(".log.lammps")
     output_file = (
-        output_dir
-        / f"{input_file.stem}_stress_strain_data.csv"
-    )
-
+    output_dir
+    / f"{output_stem}_stress_strain_data.csv"
+)
     header = (
         "timestep,"
         "true_strain_xy,"
